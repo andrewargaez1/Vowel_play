@@ -28,7 +28,11 @@ The distance between F1 and F2 is a better predictor of degree of backness in vo
               [I] 400 1920        [ʊ] 450 1030 
               [ɛ] 550 1770        [ɔ] 590 880 
               [æ] 690 1660        [ɒ] 710 1100
+              
+The figure below shows a couple different things. The first thing is on the left side that shows the spectograms of the words kit, keep, court, and cod. The red dots that are overlayed on the formants is one of the functionalities of Praat. If it is a capability of Praat it is a capablility of Parselmouth. I first process the audio file as a spectogram that is represented as an array. Then using .formant it extracts the frequency of the formant as an array. The difficulty is that in both Praat and therefore Parselmouth it requires either manually croping the desired section or manually noteing the start and end time of the section. I did not have the luxury of noteing or cropping each of my 8,000 audio files. My solution to this problem was to write an algorithim that would create a window the size of my choosing and slide across the array of formants checking the variance. If the variance was under the threshold I set as my paramater the points would be appended into a new list. 
 
 
- 
+<img width="1792" alt="Screen Shot 2021-08-11 at 9 45 21 PM" src="https://user-images.githubusercontent.com/60011848/129139477-fec987e9-5869-40aa-950b-7b66d18c8ade.png">
+
+<img width="999" alt="Screen Shot 2021-08-11 at 9 42 27 PM" src="https://user-images.githubusercontent.com/60011848/129139303-ef104c7e-2666-445f-9d1a-a5a014ef0139.png">
               
