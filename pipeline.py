@@ -119,7 +119,10 @@ def convert(path, model):
     df1['F2'] = [gimme_dat_frequency(path,2,6,1100)]
     df1['Duration'] = [gimme_dat_duration(path,1,6,1100)]
     df1=pd.DataFrame(df1)
-    df1['gender']= model.predict(df1.iloc[0,:].values.reshape(1,-1))
+    try:
+        df1['gender']= model.predict(df1.iloc[0,:].values.reshape(1,-1))
+    except:
+        df1['gender']= [1]
     return df1
 
 
